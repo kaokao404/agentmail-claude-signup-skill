@@ -1,16 +1,16 @@
-# Resume without duplicates
+# 避免重复创建，安全恢复流程
 
-Keep a private checkpoint of the last verified stage: connected, inbox verified, email submitted, verified, consent complete, onboarding, signed in. Store no message body, authentication link, code, cookie, credential, or browser/session metadata. Reinspect current state when resuming; the checkpoint is evidence to investigate, not proof of the present state.
+私下记录最后一次已核验的阶段：已连接、邮箱已核验、邮箱已提交、验证完成、同意完成、入门设置、已登录。不得保存邮件正文、认证链接、验证码、Cookie、凭据或浏览器与会话元数据。恢复时重新检查当前状态；检查点仅是调查线索，不能证明现在仍处于该状态。
 
-- **Connection missing or revoked:** Ask the owner to connect through the supported authorization UI. Continue only after a harmless inbox read succeeds. Never retrieve tokens from files or substitute another user's mailbox.
-- **Creation timed out:** List/get first. Reuse the same stable client identifier for the same logical inbox. If reconciliation cannot establish whether the inbox exists, report uncertainty and stop before a new creation.
-- **Email delayed:** Refresh only the intended mailbox at a reasonable interval within the interactive task. Check the exact submitted address. Avoid repeated resend clicks; after a short delivery wait and one user-approved resend, report persistent delivery failure. Do not rotate addresses to evade a service restriction.
-- **Link expired or already used:** Inspect the current browser and mailbox first. If needed, request one fresh verification email through the current signup UI. Correlate it to that request. Never retry old links indefinitely.
-- **Duplicate/existing account:** Ask whether the user intends to sign in or recover the account. Do not silently create another inbox or change the account identity.
-- **CAPTCHA, access denial, unsupported region, or provider rejection:** Stop at the specific blocker. Use a supported user handoff where appropriate. Do not spoof eligibility, cycle proxies, or attempt stealth automation.
-- **Unexpected terms or charges:** Present the changed requirement and its link or amount. Await user direction; authorization for free signup does not cover a purchase.
-- **Unknown identity, phone, or age requirement:** Ask the user for the required truthful information or hand off. Never fabricate it or use somebody else's identity.
-- **Training toggle absent:** Do not claim it is off. Explain that the preference could not be verified and use official settings/help if available.
-- **Browser closes or navigation changes:** Reopen the official site and inspect. Do not replay the whole flow blindly.
+- **未连接或授权已撤销：** 请所有者通过受支持的授权界面连接。只有无害的邮箱读取成功后才继续。不得从文件中提取令牌，也不得使用别人的邮箱替代。
+- **创建超时：** 先列出或获取邮箱。同一个逻辑邮箱使用同一稳定客户端标识。若无法确定是否已创建，报告不确定性，在再次创建前停止。
+- **邮件延迟：** 在本次交互任务中以合理间隔刷新目标邮箱，核对提交的准确地址。避免反复点击重发；短暂等待投递并进行一次用户批准的重发后，若仍失败则报告。不得轮换地址来规避服务限制。
+- **链接已过期或已使用：** 先检查当前浏览器和邮箱。必要时通过当前注册页面请求一封新的验证邮件，并与该请求对应。不得无限重试旧链接。
+- **重复或已有账号：** 询问用户是否要登录或找回该账号，不得擅自创建另一个邮箱或改变账号身份。
+- **验证码、访问被拒、地区不支持或提供商拒绝：** 在具体阻碍处停止。合适时使用受支持的用户接管流程。不得伪造资格、轮换代理或尝试隐蔽自动化。
+- **意外条款或费用：** 展示变化后的要求及链接或金额，等待用户决定。免费注册授权不包括购买。
+- **未知身份、电话或年龄要求：** 请求用户提供所需真实信息，或交由用户操作。不得编造，也不得使用他人身份。
+- **找不到训练开关：** 不得声称已经关闭。说明无法核验偏好，必要时查看官方设置或帮助。
+- **浏览器关闭或导航改变：** 重新打开官方网站并检查，不要盲目重放整个流程。
 
-Stop safely with the verified stage, exact blocker, and smallest next action. Avoid exposing authentication URLs or unnecessary account identifiers in the report.
+安全停止时报告已核验的阶段、准确阻碍及最小下一步。报告中避免暴露认证网址或不必要的账号标识。

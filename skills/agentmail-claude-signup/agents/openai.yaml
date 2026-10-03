@@ -1,4 +1,4 @@
 interface:
-  display_name: "AgentMail to Claude Signup"
-  short_description: "Create an inbox and complete approved Claude signup"
-  default_prompt: "Use $agentmail-claude-signup to create an AgentMail inbox and help me complete a Claude free-account signup with my approvals."
+  display_name: "AgentMail 邮箱注册 Claude"
+  short_description: "创建并核验 AgentMail 邮箱，在用户授权下完成 Claude 免费账号注册"
+  default_prompt: "使用 $agentmail-claude-signup 创建一个 AgentMail 邮箱，并在取得必要批准后协助我完成 Claude 免费账号注册。"
