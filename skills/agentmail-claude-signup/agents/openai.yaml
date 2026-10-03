@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgentMail to Claude Signup"
+  short_description: "Create an inbox and complete approved Claude signup"
+  default_prompt: "Use $agentmail-claude-signup to create an AgentMail inbox and help me complete a Claude free-account signup with my approvals."
